@@ -14,6 +14,7 @@ jobs:
 
   first:
     runs-on: ubuntu-latest
+    needs: build
     environment: 
        name: stage
        url: https://stage.domain.com
@@ -23,7 +24,7 @@ jobs:
         
   second:
     runs-on: ubuntu-latest
-    needs: first
+    needs: build
     environment: 
        name: production
        url: https://prod.domain.com
