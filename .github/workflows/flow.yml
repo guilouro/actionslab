@@ -6,8 +6,17 @@ on:
   workflow_dispatch:
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run build
+        run: echo Hello, world!
+
   first:
     runs-on: ubuntu-latest
+    environment: 
+       name: stage
+       url: https://stage.domain.com
     steps:
       - name: Run first step
         run: echo Hello, world!
@@ -15,6 +24,9 @@ jobs:
   second:
     runs-on: ubuntu-latest
     needs: first
+    environment: 
+       name: production
+       url: https://prod.domain.com
     steps:
       - name: Run second step
         run: echo Hello, world!
