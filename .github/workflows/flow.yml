@@ -1,8 +1,6 @@
 name: Deploy
 
 on:
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
@@ -10,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run build
-        run: echo Hello, world!
+        run: Build OK!
 
   stage:
     runs-on: ubuntu-latest
@@ -19,8 +17,8 @@ jobs:
        name: stage
        url: https://stage.domain.com
     steps:
-      - name: Run first step
-        run: echo Hello, world!
+      - name: Deploy
+        run: Deploy OK!
         
   production:
     runs-on: ubuntu-latest
@@ -29,5 +27,5 @@ jobs:
        name: production
        url: https://prod.domain.com
     steps:
-      - name: Run second step
-        run: echo Hello, world!
+      - name: Deploy
+        run: Deploy OK!
