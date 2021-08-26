@@ -6,6 +6,6 @@
 }
 
 @test "should contain words in file" {
-  cat ./README.md
+  cat ./README.md 2>&1 | grep "github action lab"
   assert_output --partial "github action lab"
 }
