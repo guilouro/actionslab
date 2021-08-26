@@ -9,6 +9,7 @@ load '/opt/bats-assert/load.bash'
 }
 
 @test "should contain words in file" {
-  cat ./README.md 2>&1 | grep "github action lab"
-  assert_output --partial "github action lab"
+  grep -q "github action lab" ./README.md
+  [ $? -eq 0 ]
+  assert_success
 }
