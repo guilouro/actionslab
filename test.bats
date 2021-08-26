@@ -13,3 +13,10 @@ load '/opt/bats-assert/load.bash'
   [ $? -eq 0 ]
   assert_success
 }
+
+
+@test "should contain words in file (error)" {
+  grep -q "github action lob" ./README.md
+  [ $? -eq 0 ]
+  assert_success
+}
